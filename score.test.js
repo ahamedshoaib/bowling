@@ -143,16 +143,26 @@ describe('multiple spares and strikes in any position except last frame', () => 
 });
 
 describe('strike and spare in last frame', () => {
-  // strike in last frame
-  // spare
-  // multi strike
-  //
+  test('all 1s and strike in last frame', () => {
+    // setup
+    const input = []; // 18+16 = 34
+    for (let i = 0; i < 20; i += 1) {
+      input.push(1);
+    }
+    input[18] = 10;
+    input[19] = 4;
+    input[20] = 2;
+    const output = 34;
+
+    // verify
+    expect(calculateScore(input)).toBe(output);
+  });
 });
 
 describe('perfect game', () => {
   test('perfect game(all strikes should return 300', () => {
     // setup
-    const input = []; // 24+18+4+4 = 50
+    const input = [];
     for (let i = 0; i < 12; i += 1) {
       input.push(10);
     }
