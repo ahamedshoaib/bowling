@@ -45,10 +45,16 @@ describe('single spare in any position except last frame', () => {
     for (let i = 7; i < 20; i += 1) {
       input.push(0);
     }
-    const output = 0;
+    const output = 24;
 
     // verify
     expect(calculateScore(input)).toBe(output);
   });
 });
 
+// empty array
+// continuous spares
+// continuous strikes
+// multiple spares
+// multiple strikes
+// last frame strike and spare
