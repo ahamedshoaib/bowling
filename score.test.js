@@ -157,6 +157,22 @@ describe('strike and spare in last frame', () => {
     // verify
     expect(calculateScore(input)).toBe(output);
   });
+
+  test('all 1s and spare in last frame', () => {
+    // setup
+    const input = []; // 18+12 = 30
+    for (let i = 0; i < 20; i += 1) {
+      input.push(1);
+    }
+    input[18] = 5;
+    input[19] = 5;
+    input[20] = 2;
+    const output = 30;
+
+    // verify
+    expect(calculateScore(input)).toBe(output);
+  });
+  // spare in last frame
 });
 
 describe('perfect game', () => {
