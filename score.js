@@ -19,12 +19,6 @@ const calculateScore = (rolls) => {
   for (rollCount = 0; rollCount < numRolls; rollCount += 1) {
     // total frames in a game of bowling is 10
     if (frameNumber < 10) {
-      // increment frame number and reset frame variables if new frame
-      if (frameCount === 2 || frameScore === 10) {
-        frameNumber += 1;
-        frameCount = 0;
-        frameScore = 0;
-      }
 
       score += rolls[rollCount];
       frameScore += rolls[rollCount];
@@ -46,6 +40,12 @@ const calculateScore = (rolls) => {
       }
 
       frameCount += 1;
+      // increment frame number and reset frame variables if new frame
+      if (frameCount === 2 || frameScore === 10) {
+        frameNumber += 1;
+        frameCount = 0;
+        frameScore = 0;
+      }
     }
   }
   return score + spareBonus + strikeBonus;

@@ -150,5 +150,15 @@ describe('strike and spare in last frame', () => {
 });
 
 describe('perfect game', () => {
-  // perfect game 300
+  test('perfect game(all strikes should return 300', () => {
+    // setup
+    const input = []; // 24+18+4+4 = 50
+    for (let i = 0; i < 12; i += 1) {
+      input.push(10);
+    }
+    const output = 300;
+
+    // verify
+    expect(calculateScore(input)).toBe(output);
+  });
 });
