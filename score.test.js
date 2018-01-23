@@ -84,3 +84,4 @@ describe('single strike in any position except last frame', () => {
 // multiple spares
 // multiple strikes
 // last frame strike and spare
+// 0 10 spare not strike
