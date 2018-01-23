@@ -52,6 +52,32 @@ describe('single spare in any position except last frame', () => {
   });
 });
 
+describe('single strike in any position except last frame', () => {
+  test('given sequence [10, 4, 4, 0...] return 26', () => {
+    // setup
+    const input = [10, 4, 4];
+    for (let i = 3; i < 20; i += 1) {
+      input.push(0);
+    }
+    const output = 26;
+
+    // verify
+    expect(calculateScore(input)).toBe(output);
+  });
+
+  test('given sequence [1, 1, 1, 1, 10, 3, 2, 0...] return 26)', () => {
+    // setup
+    const input = [1, 1, 1, 1, 10, 3, 3];
+    for (let i = 7; i < 20; i += 1) {
+      input.push(0);
+    }
+    const output = 26;
+
+    // verify
+    expect(calculateScore(input)).toBe(output);
+  });
+});
+
 // empty array
 // continuous spares
 // continuous strikes
